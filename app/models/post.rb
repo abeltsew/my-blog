@@ -9,7 +9,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :author, presence: true
-  validates :title, length: { in: 1..255 }
+  validates :title, length: { in: 1..250 }
   validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
   validates :comment_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
