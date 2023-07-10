@@ -34,7 +34,7 @@ RSpec.describe Comment, type: :model do
     expect(comment.macro).to eq(:belongs_to)
   end
 
-  it 'updates likes counter of the post' do
+  it 'updates comments counter of the post' do
     user1 = User.create(
       name: 'Tom',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
