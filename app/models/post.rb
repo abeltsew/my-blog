@@ -10,8 +10,9 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :title, length: { in: 1..255 }
-  validates :comment_counter, numericality: { greater_or_equal_to: 0 }
-  validates :likes_counter, numericality: { greater_or_equal_to: 0 }
+  validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :comment_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+
 
   def update_post_counter
     poster = User.find_by_id(author.id)
