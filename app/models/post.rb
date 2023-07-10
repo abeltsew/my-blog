@@ -13,7 +13,6 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
   validates :comment_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
-
   def update_post_counter
     poster = User.find_by_id(author.id)
     poster.posts_counter = poster.posts_counter.to_i + 1
