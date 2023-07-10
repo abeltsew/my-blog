@@ -31,6 +31,4 @@ RSpec.describe Post, type: :model do
     subject.author = nil
     expect(subject).to_not be_valid
   end
-
-
 end
