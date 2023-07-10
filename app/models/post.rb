@@ -7,6 +7,12 @@ class Post < ApplicationRecord
 
   scope :get_5_comments, ->(post) { post.comments.order('created_at DESC').limit(5) }
 
+  validates :title, presence: true
+  validates :author, presence: true
+
+  validates :comment_counter, numericality: { greater_or_equal_to: 0 }
+  validates :likes_counter, numericality: { greater_or_equal_to: 0 }
+
   def update_post_counter
     poster = User.find_by_id(author.id)
     poster.posts_counter = poster.posts_counter.to_i + 1
