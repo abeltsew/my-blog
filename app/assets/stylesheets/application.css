@@ -48,3 +48,15 @@
   align-self: flex-end;
   justify-self: flex-end;
 }
+
+.detail_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.all_post_btn {
+  align-self: center;
+  width: max-content;
+}
