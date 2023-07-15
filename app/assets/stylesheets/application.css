@@ -60,3 +60,28 @@
   align-self: center;
   width: max-content;
 }
+
+.comments_container {
+  display: flex;
+  flex-direction: column;
+}
+.comments_likes {
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-right: 1rem;
+}
+
+.buttton_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts_info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.posts_show_container {
+  margin: 2rem 4rem;
+}
