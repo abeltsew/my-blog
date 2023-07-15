@@ -65,6 +65,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .comments_likes {
   align-self: flex-end;
   justify-self: flex-end;
