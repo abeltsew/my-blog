@@ -8,7 +8,7 @@
         <%= @user.bio %>
         </p>
     </div>
-<% @user.posts.each do |post| %>
+<% User.three_recent_posts(@user).each do |post| %>
     <div class="boxed" >
         <h1>post <%= post.title %></h1>
         <p>

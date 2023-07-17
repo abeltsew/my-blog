@@ -11,7 +11,7 @@
         </p>
 </div>
 <div class="boxed">
-<% post.comments.each  do |comment|%>
+<% Post.get_5_comments(post).each  do |comment|%>
     <p><%= comment.author.name%> - <%= comment.text %></p>
     <%end%>
 </div>
