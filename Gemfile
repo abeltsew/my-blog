@@ -58,6 +58,7 @@ group :development do
   gem 'web-console'
 
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   gem 'rubocop', '>= 1.0', '< 2.0'
@@ -70,4 +71,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
 end
