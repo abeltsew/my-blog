@@ -1,16 +1,6 @@
 
 <% @users.each do |user| %>
 
-<div class="user_container">
-    <div class="boxed img_container">
-    <img src=<%= user.photo %> alt="profile"/>
-    </div>
-         <a class=" boxed user_card" href="/users/<%= user.id%>">
-            <h2 class="user_label"> <%= user.name %></h2>
-
-            <p class="post_counter">Number of posts: <%= user.posts_counter%> </p>
-         </a>
- 
-</div>
+<%= render 'shared/user_profile', user: user %>
 
 <% end %>

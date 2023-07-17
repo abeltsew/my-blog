@@ -1,10 +1,4 @@
-<div class="user_container">
-        <div class="boxed img_container"></div>
-            <div class=" boxed user_card">
-            <h2 class="user_label"><%= @user.name%></h2>
-            <p class="post_counter">Number of posts: <%= @user.posts_counter%>
-         </div>
-</div>
+<%= render 'shared/user_profile', user: @user %>
 
 <% @posts.each  do  |post|%>
 <div class="boxed comments_container">
