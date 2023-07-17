@@ -1,0 +1,30 @@
+<div class="user_container">
+        <div class="boxed img_container"></div>
+            <div class=" boxed user_card">
+            <h2 class="user_label">username</h2>
+            <p class="post_counter">Number of posts: x
+         </div>
+</div>
+
+<% 2.times do %>
+<div class="boxed comments_container">
+    <h1>post #x</h1>
+        <p>
+            lorem ipsum dolor sit amet, consectetur adip proident, sed diam nonum et just e parturient. Ut enim ad minim veniam, quis nostr one mover. Excepteur
+        </p>
+        <p class="comments_likes">
+            Comments: x Likes: y
+        </p>
+</div>
+<div class="boxed">
+<% i = 1 %>
+<% 5.times do%>
+    <p>Username: comments <%= i %></p>
+    <% i+=1%>
+    <%end%>
+</div>
+<br />
+<%end%>
+<div class="buttton_container">
+<button class="all_post_btn">Pagination</button>
+</div>
