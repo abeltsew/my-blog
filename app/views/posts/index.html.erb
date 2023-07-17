@@ -1,26 +1,18 @@
-<div class="user_container">
-        <div class="boxed img_container"></div>
-            <div class=" boxed user_card">
-            <h2 class="user_label">username</h2>
-            <p class="post_counter">Number of posts: x
-         </div>
-</div>
+<%= render 'shared/user_profile', user: @user %>
 
-<% 2.times do %>
+<% @posts.each  do  |post|%>
 <div class="boxed comments_container">
-    <h1>post #x</h1>
+    <a href="/users/<%= post.author_id%>/posts/<%= post.id %>"><%= post.title%></a>
         <p>
-            lorem ipsum dolor sit amet, consectetur adip proident, sed diam nonum et just e parturient. Ut enim ad minim veniam, quis nostr one mover. Excepteur
+           <%= post.text%>
         </p>
         <p class="comments_likes">
-            Comments: x Likes: y
+            Comments: <%= post.comment_counter %> Likes: <%= post.likes_counter%>
         </p>
 </div>
 <div class="boxed">
-<% i = 1 %>
-<% 5.times do%>
-    <p>Username: comments <%= i %></p>
-    <% i+=1%>
+<% Post.get_5_comments(post).each  do |comment|%>
+    <p><%= comment.author.name%> - <%= comment.text %></p>
     <%end%>
 </div>
 <br />

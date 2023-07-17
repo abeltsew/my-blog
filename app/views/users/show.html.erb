@@ -1,29 +1,23 @@
-<div class="user_container">
-    <div class="boxed img_container"></div>
-         <div class=" boxed user_card">
-            <h2 class="user_label">username</h2>
+<%= render 'shared/user_profile', user: @user %>
 
-            <p class="post_counter">Number of posts: x
-         </div>
- </div>
 <div class="detail_container">
 
     <div class="boxed">
         <h1>Bio</h1>
         <p>
-        lorem ipsum dolor sit amet, consectetur adip proident, sed diam nonum et just e parturient. Ut enim ad minim veniam, quis nostr one mover. Excepteur
+        <%= @user.bio %>
         </p>
     </div>
-<% 3.times do%>
-    <div class="boxed">
-        <h1>post #x</h1>
+<% User.three_recent_posts(@user).each do |post| %>
+    <div class="boxed" >
+        <h1>post <%= post.title %></h1>
         <p>
-        lorem ipsum dolor sit amet, consectetur adip proident, sed diam nonum et just e parturient. Ut enim ad minim veniam, quis nostr one mover. Excepteur
+        <%= post.text %>
         </p>
-        <p class="comments_likes">Comments: x Likes: y</p>
+        <p class="comments_likes">Comments: <%= post.comment_counter %> Likes: <%= post.likes_counter %></p>
     </div>
 <%end%>
     
 
-<button class="all_post_btn">See all Posts</button>
+<a href="/users/<%= @user.id%>/posts" class="all_post_btn">See all Posts</a>
 </div>

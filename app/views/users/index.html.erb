@@ -1,14 +1,6 @@
 
-<% 6.times do %>
+<% @users.each do |user| %>
 
-<div class="user_container">
-    <div class="boxed img_container"></div>
-         <div class=" boxed user_card">
-            <h2 class="user_label">username</h2>
+<%= render 'shared/user_profile', user: user %>
 
-            <p class="post_counter">Number of posts: x
-         </div>
- 
-</div>
-
-     <% end %>
+<% end %>
