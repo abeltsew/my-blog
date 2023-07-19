@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
 
-  get 'users/:id/posts/:post_id/like/create', to: 'likes#create'
+  post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
 
   
 
