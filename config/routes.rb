@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   get '/users/:id/posts', to: 'posts#index'
 
+  get '/users/:id/posts/new', to: 'posts#new'
+
   get '/users/:id/posts/:post_id', to: 'posts#show'
 
+  post '/users/:id/posts/create', to: 'posts#create'
 
 end
