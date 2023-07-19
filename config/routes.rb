@@ -12,7 +12,18 @@ Rails.application.routes.draw do
 
   get '/users/:id/posts', to: 'posts#index'
 
+  get '/users/:id/posts/new', to: 'posts#new'
+
   get '/users/:id/posts/:post_id', to: 'posts#show'
 
+  post '/users/:id/posts/create', to: 'posts#create'
+
+  get 'users/:id/posts/:post_id/comments/new', to: 'comments#new'
+
+  post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
+
+  post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
+
+  
 
 end

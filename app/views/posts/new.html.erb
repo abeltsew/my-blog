@@ -1,0 +1,21 @@
+<h1>New Post</h1>
+<% if @post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+<% end%>
+<%= form_with url: "/users/21/posts/create", model: @post do |form|%>
+<%= form.label :title %>
+<%= form.text_field :title%>
+<br/>
+<%= form.label :text %>
+<%= form.text_field :text%>
+<br/>
+<%= form.submit%>
+
+<%end%>
