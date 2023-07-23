@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
     if @comment.save
-      redirect_to users_path
+      redirect_to user_post_path(user_id: current_user.id, id: params[:post_id])
     else
       render :new
     end

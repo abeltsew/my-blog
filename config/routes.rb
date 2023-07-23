@@ -6,24 +6,29 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  get '/users', to: 'users#index'
+  # get '/users', to: 'users#index'
 
-  get '/users/:id', to: 'users#show'
+  # get '/users/:id', to: 'users#show'
 
-  get '/users/:id/posts', to: 'posts#index'
+  # get '/users/:id/posts', to: 'posts#index'
 
-  get '/users/:id/posts/new', to: 'posts#new'
+  # get '/users/:id/posts/new', to: 'posts#new'
 
-  get '/users/:id/posts/:post_id', to: 'posts#show'
+  # get '/users/:id/posts/:post_id', to: 'posts#show'
 
-  post '/users/:id/posts/create', to: 'posts#create'
+  # post '/users/:id/posts/create', to: 'posts#create'
 
-  get 'users/:id/posts/:post_id/comments/new', to: 'comments#new'
+  # get 'users/:id/posts/:post_id/comments/new', to: 'comments#new'
 
-  post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
+  # post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
 
-  post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
+  # post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
 
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :new, :show, :create] do
+      resources :comments, only: [:new, :index, :create]
+      resources :likes, only: [:new, :create]
+    end
+  end
   
-
 end
