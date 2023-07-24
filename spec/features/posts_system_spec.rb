@@ -5,10 +5,20 @@ RSpec.describe 'User', type: :feature do
     @abel = User.create(name: 'Abel Tsegaye', photo: 'https://abellinktophoto.jpg', bio: 'Make a diffrence',
                         posts_counter: 0)
     @sam = User.create(name: 'Samuel', photo: 'https://samlinktophoto.jpg', bio: 'be the diffrence', posts_counter: 0)
+    @post1 = Post.create(title: 'post 1 title',
+      text: 'post content 1',
+      comment_counter: 0,
+      likes_counter: 0,
+      author: @abel)
   end
 
   describe 'post index' do
-    it 'I can see the users profile picture.'
+    before(:each) do
+      visit "/users/#{@abel.id}/posts"
+    end
+    it 'I can see the user\'s profile picture.' do
+      expect(page).to have_xpath("//img[contains(@src,'https://abellinktophoto.jpg')]")
+    end
     it 'I can see the users username.'
     it 'I can see the number of posts the user has written.'
     it 'I can see a posts title.'
