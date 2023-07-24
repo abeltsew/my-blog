@@ -14,7 +14,7 @@
 <a href=<%="/users/#{params[:user_id]}/posts/#{@post.id}/comments/new"%>>Comment</a>
 
 <div class="boxed">
-    <% @post.comments.each do |comment| %>
+    <% @post.comments.includes([:author]).each do |comment| %>
      <p><%= comment.author.name%>: <%= comment.text %></p>
     <%end%>
 
