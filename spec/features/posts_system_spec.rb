@@ -19,7 +19,9 @@ RSpec.describe 'User', type: :feature do
     it 'I can see the user\'s profile picture.' do
       expect(page).to have_xpath("//img[contains(@src,'https://abellinktophoto.jpg')]")
     end
-    it 'I can see the users username.'
+    it 'I can see the user\'s username.' do
+      expect(page).to have_content(@abel.name)
+    end
     it 'I can see the number of posts the user has written.'
     it 'I can see a posts title.'
     it 'I can see some of the posts body.'
