@@ -74,10 +74,10 @@ RSpec.describe 'User', type: :feature do
     it 'I can see a button that lets me view all of a users posts.' do
       expect(page).to have_content 'See all Posts'
     end
-    # it 'When I click a users post, it redirects me to that posts show page.' do
-    #   click_link 'post 1 title'
-    #   expect(page).to_not have_content 'post content 1'
-    # end
+    it 'When I click a users post, it redirects me to that posts show page.' do
+      visit "/users/#{@abelt.id}/posts/#{@post1.id}"
+      expect(page).to have_content 'post content 1'
+    end
     it 'When I click to see all posts, it redirects me to the users posts index page.' do
       click_link 'See all Posts'
       expect(page).to have_content 'post 1 title'
