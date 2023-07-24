@@ -6,10 +6,10 @@ RSpec.describe 'User', type: :feature do
                         posts_counter: 0)
     @sam = User.create(name: 'Samuel', photo: 'https://samlinktophoto.jpg', bio: 'be the diffrence', posts_counter: 0)
     @post1 = Post.create(title: 'post 1 title',
-      text: 'post content 1',
-      comment_counter: 0,
-      likes_counter: 0,
-      author: @abel)
+                         text: 'post content 1',
+                         comment_counter: 0,
+                         likes_counter: 0,
+                         author: @abel)
     @comment1 = Comment.create(text: 'First comment from Abel', author_id: @abel.id, post_id: @post1.id)
   end
 
@@ -75,7 +75,7 @@ RSpec.describe 'User', type: :feature do
       expect(page).to have_content 'post content 1'
     end
     it 'I can see the username of each commentor.' do
-      expect(page).to have_content "#{@abel.name}"
+      expect(page).to have_content @abel.name.to_s
     end
     it 'I can see the comment each commentor left.' do
       expect(page).to have_content 'First comment from Abel'
