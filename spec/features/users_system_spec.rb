@@ -5,10 +5,12 @@ RSpec.describe 'User', type: :feature do
     @abel = User.create(name: 'Abel Tsegaye', photo: 'https://abellinktophoto.jpg', bio: 'Make a diffrence',
                         posts_counter: 0)
     @sam = User.create(name: 'Samuel', photo: 'https://samlinktophoto.jpg', bio: 'be the diffrence', posts_counter: 0)
-    visit users_path
   end
 
   describe 'user#index' do
+    before(:each) do
+      visit users_path
+    end
     it 'should show the username of all other users.' do
       expect(page).to have_content(@abel.name)
       expect(page).to have_content(@sam.name)
@@ -27,8 +29,16 @@ RSpec.describe 'User', type: :feature do
   end
 
   describe 'user#show' do
-    it 'can see the user profile picture.'
-    it 'I can see the user username.'
+    before(:each) do
+      visit user_path(@abel.id)
+    end
+    it 'should show the profile picture for each user.' do
+      expect(page).to have_xpath("//img[contains(@src,'https://abellinktophoto.jpg')]")
+    end
+    it 'should show the username of all other users.' do
+      expect(page).to have_content(@abel.name)
+      expect(page).to_not have_content(@sam.name)
+    end
     it 'I can see the number of posts the user has written.'
     it 'I can see the user bio.'
     it 'I can see the user first 3 posts.'
