@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :feature do
   before(:each) do
-    @abel = User.create(name: 'Abel Tsegaye', photo: 'https://abellinktophoto.jpg', bio: 'Make a diffrence', posts_counter: 0)
+    @abel = User.create(name: 'Abel Tsegaye', photo: 'https://abellinktophoto.jpg', bio: 'Make a diffrence',
+                        posts_counter: 0)
     @sam = User.create(name: 'Samuel', photo: 'https://samlinktophoto.jpg', bio: 'be the diffrence', posts_counter: 0)
     visit users_path
   end
