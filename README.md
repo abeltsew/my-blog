@@ -24,22 +24,22 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[OOP School library\] ](#-oop-school-library-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -111,6 +111,12 @@ To run the project, execute the following command:
 - GitHub: [@abeltsew](https://github.com/abeltsew)
 - Twitter: [@abeltsew](https://twitter.com/abeltsew)
 - LinkedIn: [abeltsew](https://linkedin.com/in/abeltsew)
+
+👤 **Samuel Obuobi**
+
+- GitHub: [@kwesiObuobi](https://github.com/kwesiObuobi)
+- Twitter: [@kwesi_obuobi](https://twitter.com/kwesi_obuobi)
+- LinkedIn: [kwesi-obuobi](https://linkedin.com/in/kwesi-obuobi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

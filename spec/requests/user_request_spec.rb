@@ -9,7 +9,7 @@ RSpec.describe User, type: :request do
       get users_path
       expect(response.status).to eq(200)
       expect(response).to render_template('users/index')
-      expect(response.body).to include 'Number of posts'
+      expect(response.body).to include 'New Post'
     end
 
     it 'should render the users show' do
