@@ -13,15 +13,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = current_user.id
-    @post.likes_counter = 0
-    @post.comment_counter = 0
+    if current_user
+      @post = Post.new(post_params)
+      @post.author_id = current_user.id
+      @post.likes_counter = 0
+      @post.comment_counter = 0
 
-    if @post.save
-      redirect_to users_path
+      if @post.save
+        redirect_to users_path
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
   end
 
