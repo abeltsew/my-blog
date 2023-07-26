@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -16,8 +17,6 @@ Rails.application.routes.draw do
 
   # get '/users/:id/posts/:post_id', to: 'posts#show'
 
-  # post '/users/:id/posts/create', to: 'posts#create'
-
   # get 'users/:id/posts/:post_id/comments/new', to: 'comments#new'
 
   # post 'users/:id/posts/:post_id/comments/create', to: 'comments#create'
@@ -30,5 +29,5 @@ Rails.application.routes.draw do
       resources :likes, only: [:new, :create]
     end
   end
-  
+  post '/users/:id/posts/create', to: 'posts#create'
 end
