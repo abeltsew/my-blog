@@ -12,10 +12,24 @@
 <br />
 <%= render 'shared/like' %>
 <a href=<%="/users/#{params[:user_id]}/posts/#{@post.id}/comments/new"%>>Comment</a>
+<% if can? :destroy, @post %>
+ <%= form_with(model: @post, url: user_post_path(params[:user_id], @post), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
+  <%= form.submit "Destroy Post" %>
+<% end %>
+<% end %>
 
+<%# <%= link_to "Destroy Post", "/users/#{params[:user_id]}/posts/#{@post.id}", method: :delete, data: { confirm: "Are you sure?" } %> 
+<%# user_post_path(params[:user_id], @post) %>
 <div class="boxed">
     <% @post.comments.includes([:author]).each do |comment| %>
      <p><%= comment.author.name%>: <%= comment.text %></p>
+
+     <% if can? :destroy, @post %>
+      <%= form_with(model: @comment, url: user_post_comment_path(params[:user_id], @post), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
+        <%= form.hidden_field :comment_info, value: "#{comment.id}" %>
+        <%= form.submit "Destroy Comment" %>
+      <% end %>
+     <% end %>
     <%end%>
 
 </div>

@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   # post 'users/:id/posts/:post_id/likes/create', to: 'likes#create'
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :new, :show, :create] do
-      resources :comments, only: [:new, :index, :create]
+    resources :posts, only: [:index, :new, :show, :create, :destroy] do
+      resources :comments, only: [:new, :index, :create, :destroy]
       resources :likes, only: [:new, :create]
     end
   end

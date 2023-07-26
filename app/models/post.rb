@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: :post_id
 
   before_save -> { User.find_by(id: author.id).increment!(:posts_counter) }
+  before_destroy -> { User.find_by(id: author.id).decrement!(:posts_counter) }
 
   scope :get_5_comments, ->(post) { post.comments.order('created_at DESC').limit(5) }
 
