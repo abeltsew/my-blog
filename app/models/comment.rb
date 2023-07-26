@@ -5,6 +5,7 @@ class Comment < ApplicationRecord
   validates :text, presence: true
 
   after_save :update_comment_counter
+  before_destroy -> { Post.find_by(id: post_id).decrement!(:comment_counter) }
 
   def update_comment_counter
     post = Post.find_by(id: post_id)
