@@ -38,4 +38,6 @@ Rails.application.routes.draw do
       post 'post/:id/comment', to: 'comments#create'
     end
   end
+
+  post '/auth/login', to: 'authentication#login'
 end
